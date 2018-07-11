@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react'
-import AlertContainer from 'react-alert'
 
 class Alert extends Component {
 
