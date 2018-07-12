@@ -17,7 +17,6 @@ export default {
 	external: [
 		'react',
 		'react-proptypes',
-		'react-alert'
 	],
 	plugins: [
 		postcss({
