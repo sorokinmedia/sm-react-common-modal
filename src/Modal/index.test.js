@@ -29,10 +29,12 @@ describe('Modal', () => {
 
 	it('should backdrop clicked once', () => {
 		const instance = container.instance();
-		instance.handleAreaClick = jest.fn(() => console.log('ok'))
+		const spy = jest
+			.spyOn(instance, 'handleAreaClick')
+			.mockImplementation(() => true)
 		container.instance().forceUpdate()
 		container.update()
 		container.find('.modal-backdrop').simulate('click');
-		expect(instance.handleAreaClick).toHaveBeenCalled()
+		expect(spy).toHaveBeenCalled()
 	});
 })

@@ -18,12 +18,12 @@ function setup(customProps, lifeCycle = false) {
 describe('ModalTitle', () => {
 
 	it('should render the component', () => {
-		const { container } = setup()
+		const { container } = setup({ modalIsOpen: true, title: 'title', closeModal: jest.fn() })
 		expect(container.exists()).toBe(true);
+		expect(container.find('ModalHeader').length).toEqual(1);
+		expect(container.find('ModalClose').length).toEqual(1);
+		expect(container.find('ModalTitle').length).toEqual(1);
+		expect(container.find('ModalBody').length).toEqual(1);
 	});
 
-	// it('should the component has div with the required class', () => {
-	// 	const { container } = setup()
-	// 	expect(container.hasClass('modal-title')).toBeTruthy()
-	// });
 })
