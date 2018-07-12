@@ -1,0 +1,24 @@
+@keyframes OpeningSequence {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes  OpeningSequence {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-backdrop-open, .modal-dialog-open {
+    animation: OpeningSequence 0.2s linear forwards;
+    -webkit-animation: OpeningSequence 0.2s linear forwards;
+}
+
+

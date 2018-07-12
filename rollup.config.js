@@ -1,9 +1,11 @@
-const NODE_ENV = process.env.NODE_ENV || "development";
-const outputFile = NODE_ENV === "production" ? "./dist/index.js" : "./lib/index.js";
-import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
-import replace from 'rollup-plugin-replace';
+import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
+import replace from 'rollup-plugin-replace';
+import postcss from 'rollup-plugin-postcss'
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const outputFile = NODE_ENV === 'production' ? './dist/index.js' : './lib/index.js';
 
 export default {
 	input: 'src/index.js',
@@ -18,14 +20,17 @@ export default {
 		'react-alert'
 	],
 	plugins: [
+		postcss({
+			plugins: []
+		}),
 		replace({
-			"process.env.NODE_ENV": JSON.stringify(NODE_ENV)
+			'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
 		}),
 		resolve(),
 		babel({
-			exclude: "node_modules/**",
+			exclude: 'node_modules/**',
 			plugins: ['external-helpers']
 		}),
-		commonjs()
+		commonjs(),
 	],
 };

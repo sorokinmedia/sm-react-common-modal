@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import PropTypes from 'prop-types';
-import Alert from '../lib';
+import { ModalForm } from '../lib';
 
-class App extends Component {
-
-	render() {
-		return (
-			<div>
-				<Alert showAlert="Error" />
-			</div>
-		)
-	}
+function App() {
+	return (
+		<div>
+			<ModalForm showAlert="Error" />
+		</div>)
 }
 
 App.propTypes = {}
