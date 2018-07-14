@@ -1,9 +1,9 @@
 import * as exports from './index';
-import Modal from './Modal';
-import ModalBody from './ModalBody';
-import ModalClose from './ModalClose';
-import ModalHeader from './ModalHeader';
-import ModalTitle from './ModalTitle';
+import Modal from '../src/Modal';
+import ModalBody from '../src/ModalBody';
+import ModalClose from '../src/ModalClose';
+import ModalHeader from '../src/ModalHeader';
+import ModalTitle from '../src/ModalTitle';
 
 describe('expots', () => {
 	it('should exports components', () => {
