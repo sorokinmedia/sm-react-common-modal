@@ -15,6 +15,11 @@
         opacity: 1;
     }
 }
+.modal-dialog-open {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
 
 .modal-backdrop-open, .modal-dialog-open {
     animation: OpeningSequence 0.2s linear forwards;
