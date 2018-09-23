@@ -28,7 +28,7 @@ export default class Modal extends React.Component {
 						name="modal-backdrop"
 					>
 						<div
-							className="modal-dialog modal-dialog-open"
+							className={'modal-dialog modal-dialog-open ' + this.props.size}
 							style={this.props.top ? styles.top : styles.main}
 						>
 							<div className="modal-content">{this.props.children}</div>
@@ -44,5 +44,6 @@ Modal.propTypes = {
 	isOpen: PropTypes.bool.isRequired,
 	onRequestHide: PropTypes.func.isRequired,
 	children: PropTypes.node,
+	size: PropTypes.string,
 	top: PropTypes.bool
 }
