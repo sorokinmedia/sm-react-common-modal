@@ -2,6 +2,15 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import './style.css'
 
+const styles = {
+	main: {
+		zIndex: '9999'
+	},
+	top: {
+		top: 'unset',
+		transform: 'unset',
+	}
+}
 export default class Modal extends React.Component {
 
 	handleAreaClick = (ev) => {
@@ -18,7 +27,10 @@ export default class Modal extends React.Component {
 						style={{ backgroundColor: '#00000094', overflowY: 'auto' }}
 						name="modal-backdrop"
 					>
-						<div className="modal-dialog modal-dialog-open" style={{ zIndex: '900' }}>
+						<div
+							className="modal-dialog modal-dialog-open"
+							style={this.props.top ? styles.top : styles.main}
+						>
 							<div className="modal-content">{this.props.children}</div>
 						</div>
 					</div>
@@ -31,5 +43,6 @@ export default class Modal extends React.Component {
 Modal.propTypes = {
 	isOpen: PropTypes.bool.isRequired,
 	onRequestHide: PropTypes.func.isRequired,
-	children: PropTypes.node
-};
+	children: PropTypes.node,
+	top: PropTypes.bool
+}
