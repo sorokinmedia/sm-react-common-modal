@@ -17,8 +17,9 @@
 }
 .modal-dialog-open {
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    margin-top: 100px!important;
+	/*top: 50%;
+	transform: translateY(-50%);*/
 }
 
 .modal-backdrop-open, .modal-dialog-open {
