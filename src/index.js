@@ -5,3 +5,4 @@ export ModalFooter from './ModalFooter';
 export ModalForm from './ModalForm';
 export ModalHeader from './ModalHeader';
 export ModalTitle from './ModalTitle';
+export ModalButtons from './ModalButtons';
