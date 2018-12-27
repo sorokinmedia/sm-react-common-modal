@@ -1,12 +1,13 @@
 import React from 'react'
 import FancySpinner from '../FancySpinner/index'
 
-export default ({ loading, color, children }) => {
+export default ({ loading, color, children, style }) => {
+	const btnStyle = style || 'success';
 	return <button
-		className={'btn btn-success btn-flat pull-right'}
+		className={`btn btn-${btnStyle} btn-flat pull-right`}
 		disabled={!!loading}
 		style={{
-			paddingLeft: loading ? '23px' : '12px',
+			paddingLeft: loading ? '35px' : '12px',
 			transition: 'padding-left 0.2s linear',
 			display: 'flex',
 			alignItems: 'center',

@@ -10,12 +10,12 @@ class ModalButtons extends Component {
 	};
 
 	render() {
-		const {onCancel, loading, successText} = this.props;
+		const {onCancel, loading, successText, successStyle} = this.props;
 		return <div
 			className={'inline-btns-rtl'}
-			style={{ display: 'flex', flexDirection: 'row-reverse' }}
+			style={{ display: 'flex', flexDirection: 'row-reverse', marginTop: '10px' }}
 		>
-			<Button loading={loading}>
+			<Button loading={loading} style={successStyle}>
 				{successText}
 			</Button>
 			<button className={'btn btn-default btn-flat pull-right'} onClick={this.handleCancel}>
@@ -28,12 +28,14 @@ class ModalButtons extends Component {
 ModalButtons.propTypes = {
 	loading: PropTypes.bool,
 	onCancel: PropTypes.func.isRequired,
-	successText: PropTypes.string
+	successText: PropTypes.string,
+	successStyle: PropTypes.string
 };
 
 ModalButtons.defaultProps = {
 	loading: false,
-	successText: 'Сохранить'
+	successText: 'Сохранить',
+	successStyle: 'success',
 };
 
 export default connect(state => ({}), {})(ModalButtons)
